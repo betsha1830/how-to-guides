@@ -10,6 +10,10 @@ export default {
       cursive: ["Caveat"],
       sans: ["Nunito Sans"],
     },
+    colors: {
+      separator_color: "#DFDFDF",
+      border_color: "#9C9C9C",
+    },
     extend: {},
   },
   plugins: [],
