@@ -1,4 +1,4 @@
-import Card from "../../components/Card"
+import Card from "../components/Card"
 
 function Home() {
   return (
@@ -11,7 +11,17 @@ function Home() {
         robust, crunchy layer of humor. Hold onto your funny bones, because
         they're about to be tickled and tested like never before!
       </div>
-      <Card />
+      <div className="flex flex-wrap gap-x-[117px] gap-y-[60px] md:justify-between">
+        <Card
+          img_src="/fortune_cookie_banner_img.png"
+          img_alt="Fortune Cookie"
+          title="How to Navigate through Life Based on Fortune Cookie Advice"
+          short_desc="Welcome to the whimsical world of fortune cookie wisdom! 
+          Get ready to embark on a journey filled with surprises, laughter, and a dash of interpretive creativity."
+        />
+        <Card img_src="" img_alt="" title="" short_desc="" />
+        <Card img_src="" img_alt="" title="" short_desc="" />
+      </div>
     </div>
   )
 }

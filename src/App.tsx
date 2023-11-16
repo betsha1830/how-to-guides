@@ -1,10 +1,13 @@
 import Home from "./pages/Home"
+import Layout from "./layouts/Layout"
 
 function App() {
   return (
-    <div className="mt-[30px] mx-[250px]">
-      <Home />
-    </div>
+    <Layout>
+      <div className="">
+        <Home />
+      </div>
+    </Layout>
   )
 }
 
