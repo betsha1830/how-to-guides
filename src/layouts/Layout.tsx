@@ -44,7 +44,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 
   function createArray() {
     const iteration = screenHeight / 98
-    let temp = []
+    const temp = []
     for (let i = 0; i < iteration; i++) {
       temp.push(1)
     }
@@ -60,13 +60,13 @@ function Layout({ children }: { children: React.ReactNode }) {
   // })
 
   return (
-    <>
+    <div>
       <div className="emoji-list fixed mt-[-10px] my-[50px] -z-10 w-screen h-screen flex flex-col overflow-hidden">
         {iterator.map((i) => {
           return (
             <div className="flex text-[48px] mt-[50px] gap-x-[50px]">
               {emojis.map((emoji) => {
-                return <div>{emojis[Math.floor(Math.random() * 30)]}</div>
+                return <div>{emojis[Math.floor(Math.random() * 31)]}</div>
               })}
             </div>
           )
@@ -77,7 +77,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         style={backgroundImage.addImage}
       ></div>
       <main className="my-[30px] mx-[250px] absolute z-20">{children}</main>
-    </>
+    </div>
   )
 }
 

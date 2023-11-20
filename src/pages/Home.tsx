@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Card from "../components/Card"
 
 function Home() {
@@ -12,13 +13,15 @@ function Home() {
         they're about to be tickled and tested like never before!
       </div>
       <div className="flex flex-wrap gap-x-[117px] gap-y-[60px] md:justify-between">
-        <Card
-          img_src="/fortune_cookie_banner_img.png"
-          img_alt="Fortune Cookie"
-          title="How to Navigate through Life Based on Fortune Cookie Advice"
-          short_desc="Welcome to the whimsical world of fortune cookie wisdom! 
+        <Link to={"/fortuneCookie"}>
+          <Card
+            img_src="/src/assets/fortune_cookie_banner_img.png"
+            img_alt="Fortune Cookie"
+            title="How to Navigate through Life Based on Fortune Cookie Advice"
+            short_desc="Welcome to the whimsical world of fortune cookie wisdom! 
           Get ready to embark on a journey filled with surprises, laughter, and a dash of interpretive creativity."
-        />
+          />
+        </Link>
         <Card img_src="" img_alt="" title="" short_desc="" />
         <Card img_src="" img_alt="" title="" short_desc="" />
       </div>
