@@ -57,10 +57,10 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
       <div className="emoji-list fixed mt-[-10px] my-[50px] -z-10 w-screen h-screen flex flex-col overflow-hidden">
-        {iterator.map((i) => {
+        {iterator.map(() => {
           return (
             <div className="flex text-[48px] mt-[50px] gap-x-[50px]">
-              {emojis.map((emoji) => {
+              {emojis.map(() => {
                 return <div>{emojis[Math.floor(Math.random() * 31)]}</div>
               })}
             </div>
