@@ -36,11 +36,6 @@ function Layout({ children }: { children: React.ReactNode }) {
     "😱",
     "😭",
   ]
-  const backgroundImage = {
-    addImage: {
-      backgroundColor: "rgba(255,255,255,0.85)",
-    },
-  }
 
   function createArray() {
     const iteration = screenHeight / 98
@@ -72,11 +67,10 @@ function Layout({ children }: { children: React.ReactNode }) {
           )
         })}
       </div>
-      <div
-        className="w-screen h-screen fixed z-10"
-        style={backgroundImage.addImage}
-      ></div>
-      <main className="my-[30px] mx-[250px] absolute z-20">{children}</main>
+      <div className="w-screen h-screen fixed z-10 bg-white_tint"></div>
+      <div className="w-screen absolute z-20">
+        <div className="my-[30px] mx-[250px]">{children}</div>
+      </div>
     </div>
   )
 }
