@@ -11,6 +11,7 @@ export default {
       secondary_color: "#202020",
       separator_color: "#DFDFDF",
       border_color: "#9C9C9C",
+      white_tint: "rgba(255,255,255,0.85)",
     },
     extend: {},
   },
