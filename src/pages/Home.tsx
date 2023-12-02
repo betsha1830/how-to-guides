@@ -3,16 +3,18 @@ import Card from "../components/Card"
 
 function Home() {
   return (
-    <div className="space-y-[60px]">
-      <h1 className="text-center text-[64px] font-cursive">How-to guides</h1>
-      <div className="text-[32px] font-sans text-justify">
+    <div className="lg:space-y-[60px] space-y-[15px]">
+      <h1 className="text-center lg:text-[64px] text-[32px] font-cursive">
+        How-to guides
+      </h1>
+      <div className="lg:text-[32px] text-[16px] font-sans text-justify">
         Welcome, dear Wanderers of Wit, to our uproarious universe of uniquely
         unconventional wisdom! You've just donned your invisible cloak and
         stepped foot into a treasure trove of 'how-to' knowledge, coated with a
         robust, crunchy layer of humor. Hold onto your funny bones, because
         they're about to be tickled and tested like never before!
       </div>
-      <div className="flex flex-wrap gap-x-[117px] gap-y-[60px] md:justify-between">
+      <div className="flex flex-wrap lg:gap-x-[117px] lg:gap-y-[60px] gap-y-[40px] gap-x-[58px] justify-center md:justify-between lg:justify-between">
         <Link to={"/fortuneCookie"}>
           <Card
             img_src="/src/assets/fortune_cookie_banner_img.png"
