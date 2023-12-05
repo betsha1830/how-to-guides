@@ -8,7 +8,7 @@ function FortuneCookie() {
   function previousContent() {
     const curr_div = document.getElementById(`content-${content_counter}`)
     const prev_div = document.getElementById(`content-${content_counter - 1}`)
-    const next_button = document.getElementById("next")
+    const next_button = document.getElementById("next")!
     // console.log(curr_div, prev_div, content_counter - 1)
     if (prev_div != null) {
       next_button.innerText = "Next"
@@ -24,7 +24,7 @@ function FortuneCookie() {
     const after_next_div = document.getElementById(
       `content-${content_counter + 2}`
     )
-    const next_button = document.getElementById("next")
+    const next_button = document.getElementById("next")!
     // console.log(curr_div, next_div, content_counter + 1)
     if (next_button?.innerText === "Done") {
       navigation("/")

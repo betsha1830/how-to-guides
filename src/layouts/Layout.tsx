@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 function Layout({ children }: { children: React.ReactNode }) {
   const screenHeight = window.screen.height
-  const [iterator, setIterator] = useState([])
+  const [iterator, setIterator] = useState<number[]>([])
   const emojis = [
     "😀",
     "😁",
