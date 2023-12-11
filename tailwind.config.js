@@ -17,11 +17,11 @@ export default {
       keyframes: {
         ltr: {
           "0%": { transform: "translateX(0vw)" },
-          "100%": { transform: "translateX(100vw)" },
+          "100%": { transform: "translateX(50vw)" },
         },
         rtl: {
           "0%": { transform: "transformX(100vw)" },
-          "100%": { transform: "translateX(-100vw)" },
+          "100%": { transform: "translateX(-50vw)" },
         },
       },
       animation: {
