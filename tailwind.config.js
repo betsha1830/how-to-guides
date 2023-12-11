@@ -13,7 +13,22 @@ export default {
       border_color: "#9C9C9C",
       white_tint: "rgba(255,255,255,0.85)",
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        ltr: {
+          "0%": { transform: "translateX(0vw)" },
+          "100%": { transform: "translateX(100vw)" },
+        },
+        rtl: {
+          "0%": { transform: "transformX(10vw0)" },
+          "100%": { transform: "translateX(-100vw)" },
+        },
+      },
+      animation: {
+        "ltr-slow": "ltr 200s linear infinite",
+        "rtl-slow": "rtl 200s linear infinite",
+      },
+    },
   },
   plugins: [],
 }
