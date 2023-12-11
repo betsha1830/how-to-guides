@@ -20,7 +20,7 @@ export default {
           "100%": { transform: "translateX(100vw)" },
         },
         rtl: {
-          "0%": { transform: "transformX(10vw0)" },
+          "0%": { transform: "transformX(100vw)" },
           "100%": { transform: "translateX(-100vw)" },
         },
       },

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { animated, useSpring } from "react-spring"
 
 function Layout({ children }: { children: React.ReactNode }) {
   const screenHeight = window.screen.height
@@ -56,7 +55,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <div className="emoji-list fixed space-y-[15px] lg:mt-[-10px] lg:my-[50px] md:mt-[-10px] md:my-[50px] -z-10 w-screen h-screen flex flex-col overflow-hidden">
         {iterator.map((v, i) => {
           return (
-            <animated.div
+            <div
               className={
                 (i + 1) % 2 === 0
                   ? "flex flex-row-reverse text-[24px] mt-[15px] gap-x-[50px] lg:text-[48px] lg:mt-[50px] lg:gap-x-[50px] animate-ltr-slow"
@@ -66,7 +65,7 @@ function Layout({ children }: { children: React.ReactNode }) {
               {emojis.map(() => {
                 return <div>{emojis[Math.floor(Math.random() * 31)]}</div>
               })}
-            </animated.div>
+            </div>
           )
         })}
       </div>
