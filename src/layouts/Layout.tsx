@@ -54,6 +54,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <div>
       <div className="emoji-list fixed space-y-[15px] lg:mt-[-10px] lg:my-[50px] md:mt-[-10px] md:my-[50px] -z-10 w-screen h-screen flex flex-col overflow-hidden">
         {iterator.map((v, i) => {
+      v = 0
           return (
             <div
               className={
