@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import Card from "../components/Card"
+import FortuneCookie from "../assets/fortune_cookie_banner_img.png"
 
 function Home() {
   return (
@@ -17,7 +18,7 @@ function Home() {
       <div className="flex flex-wrap lg:gap-x-[117px] lg:gap-y-[60px] gap-y-[40px] gap-x-[58px] justify-center md:justify-between lg:justify-between">
         <Link to={"/fortuneCookie"}>
           <Card
-            img_src="../assets/fortune_cookie_banner_img.png"
+            img_src={FortuneCookie}
             img_alt="Fortune Cookie"
             title="How to Navigate through Life Based on Fortune Cookie Advice"
             short_desc="Welcome to the whimsical world of fortune cookie wisdom! 
