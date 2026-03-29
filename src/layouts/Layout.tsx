@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react"
+import { useMemo } from "react"
 
 function Layout({ children }: { children: React.ReactNode }) {
   const screenHeight = window.screen.height
-  const [iterator, setIterator] = useState<number[]>([])
   const emojis = [
     "😀",
     "😁",
@@ -37,33 +36,30 @@ function Layout({ children }: { children: React.ReactNode }) {
     "😭",
   ]
 
-  function createArray() {
+  const iterator = useMemo(() => {
     const iteration = screenHeight / 49 // total gap+text_size between emojis
     const temp = []
     for (let i = 0; i < iteration; i++) {
       temp.push(1)
     }
-    setIterator(temp)
-  }
-
-  useEffect(() => {
-    createArray()
-  }, [])
+    return temp
+  }, [screenHeight])
 
   return (
     <div>
-      <div className="emoji-list fixed space-y-[15px] lg:mt-[-10px] lg:my-[50px] md:mt-[-10px] md:my-[50px] -z-10 w-screen h-screen flex flex-col overflow-hidden">
+      <div className="emoji-list fixed space-y-[15px] lg:mt-[-10px] lg:my-[50px] md:mt-[-10px] md:my-[50px] -z-10 w-[300vw] h-screen flex flex-col overflow-hidden">
         {iterator.map((_, i) => {
           return (
             <div
+              key={i}
               className={
                 (i + 1) % 2 === 0
-                  ? "flex flex-row-reverse text-[24px] mt-[15px] gap-x-[50px] lg:text-[48px] lg:mt-[50px] lg:gap-x-[50px] animate-ltr-slow"
-                  : "flex text-[24px] mt-[15px] gap-x-[50px] lg:text-[48px] lg:mt-[50px] lg:gap-x-[50px] animate-rtl-slow"
+                  ? "flex text-[24px] mt-[15px] gap-x-[50px] lg:text-[48px] lg:mt-[50px] lg:gap-x-[50px] animate-ltr-slow whitespace-nowrap"
+                  : "flex text-[24px] mt-[15px] gap-x-[50px] lg:text-[48px] lg:mt-[50px] lg:gap-x-[50px] animate-rtl-slow whitespace-nowrap"
               }
             >
-              {emojis.map(() => {
-                return <div>{emojis[Math.floor(Math.random() * 31)]}</div>
+              {emojis.map((_, j) => {
+                return <div key={j}>{emojis[Math.floor(Math.random() * 31)]}</div>
               })}
             </div>
           )

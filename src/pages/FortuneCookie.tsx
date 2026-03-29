@@ -1,5 +1,6 @@
 import AdviceContent from "../components/AdviceContent"
 import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react"
 import Cookie from "../assets/cookie.svg"
 import Art from "../assets/the_art_of_interpetation.svg"
 import Sharing from "../assets/sharing_is_caring_or_a_trap.svg"
@@ -7,30 +8,30 @@ import Luck from "../assets/luck_vs_real_life.svg"
 import Fortune from "../assets/fortune_cookie.svg"
 
 function FortuneCookie() {
-  let content_counter = 1
+  const [contentCounter, setContentCounter] = useState(1)
   const navigation = useNavigate()
 
   function previousContent() {
-    const curr_div = document.getElementById(`content-${content_counter}`)
-    const prev_div = document.getElementById(`content-${content_counter - 1}`)
+    const curr_div = document.getElementById(`content-${contentCounter}`)
+    const prev_div = document.getElementById(`content-${contentCounter - 1}`)
     const next_button = document.getElementById("next")!
-    // console.log(curr_div, prev_div, content_counter - 1)
+    // console.log(curr_div, prev_div, contentCounter - 1)
     if (prev_div != null) {
       next_button.innerText = "Next"
       curr_div?.classList.add("hidden")
       prev_div?.classList.remove(`hidden`)
-      content_counter -= 1
+      setContentCounter(contentCounter - 1)
     }
   }
 
   function nextContent() {
-    const curr_div = document.getElementById(`content-${content_counter}`)
-    const next_div = document.getElementById(`content-${content_counter + 1}`)
+    const curr_div = document.getElementById(`content-${contentCounter}`)
+    const next_div = document.getElementById(`content-${contentCounter + 1}`)
     const after_next_div = document.getElementById(
-      `content-${content_counter + 2}`
+      `content-${contentCounter + 2}`
     )
     const next_button = document.getElementById("next")!
-    // console.log(curr_div, next_div, content_counter + 1)
+    // console.log(curr_div, next_div, contentCounter + 1)
     if (next_button?.innerText === "Done") {
       navigation("/")
     }
@@ -41,7 +42,7 @@ function FortuneCookie() {
     if (next_div !== null) {
       curr_div?.classList.add("hidden")
       next_div?.classList.remove(`hidden`)
-      content_counter += 1
+      setContentCounter(contentCounter + 1)
     }
   }
 
